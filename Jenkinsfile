@@ -7,7 +7,7 @@ pipeline {
         stage('vcs'){
             steps{
                 git url: 'https://github.com/kloudtester/StudentCoursesRestAPI.git',
-                    branch: 'dev'
+                    branch: 'sprint_1'
             }
         }
         stage('docker'){
@@ -17,6 +17,6 @@ pipeline {
                 sh 'docker image push krishnatester/spc:1.0'
             }
         }
-        
+
     }
 }
