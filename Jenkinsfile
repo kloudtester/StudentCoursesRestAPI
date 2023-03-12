@@ -7,7 +7,7 @@ pipeline {
         stage('vcs'){
             steps{
                 git url: 'https://github.com/kloudtester/StudentCoursesRestAPI.git',
-                    branch: 'dev'
+                    branch: 'master'
             }
         }
         stage('docker'){
