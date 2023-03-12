@@ -12,9 +12,10 @@ pipeline {
         }
         stage('docker'){
             steps{
-                sh 'docker image build -t krishnatester/spc:1.0 .'
-                sh 'docker scan krishnatester/spc:1.0'
-                sh 'docker image push krishnatester/spc:1.0'
+                sh """sudo chmod 666 /var/run/docker.sock
+                      docker image build -t krishnatester/spc:1.0 .
+                      docker scan krishnatester/spc:1.0
+                      docker image push krishnatester/spc:1.0"""
             }
         }
 
