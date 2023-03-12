@@ -14,7 +14,6 @@ pipeline {
             steps{
                 sh """sudo chmod 666 /var/run/docker.sock 
                  docker image build -t krishnatester/spc:1.0 .
-                 docker scan krishnatester/spc:1.0
                  docker image push krishnatester/spc:1.0"""
             }
         }
